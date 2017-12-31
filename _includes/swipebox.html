@@ -1,0 +1,17 @@
+<div class="swipebox-gallery">
+  {% for file in site.static_files %}
+    {% if file.path contains include.prefix %}
+      <a href="{{ site.baseurl }}{{ file.path }}" class="swipebox swipebox-{{ include.prefix }}"  title="{{ include.subtitle }}">
+        <img src="{{ site.baseurl }}{{ file.path }}" alt="{{ include.subtitle }}">
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script type="text/javascript">
+  (function($) {
+    $( '.swipebox-{{ include.prefix }}' ).swipebox({
+      hideBarsDelay : 3000000
+    });
+  })(jQuery);
+</script>
