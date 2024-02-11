@@ -9,15 +9,12 @@
       <section class="content-text">{{ content }}</section>
       <section class="list-wrapper">
         {% assign news = 'Últimas Notícias' %}
-        {% if page.lang == 'en' %}
-          {% assign news = 'Latest News' %}
-        {% endif %}
         <a href="/noticias/"><h2>{{ news }}</h2></a>
         <div class="home-list">
           {% assign posts = site.posts | where:"lang", page.lang %}
-          {% for post in posts limit: 20 %}
+          {% for post in posts limit: 100 %}
             {% assign pCover = site.baseurl | append: '/' | append: post.cover %}
-            <a class="list-item" href="{{ site.baseurl }}{{ post.url }}">
+            <a class="list-item" href="{{ site.baseurl }}#">
               <div class="list-item-image" style="background-image: url('{{ pCover }}');">
                 <div class="list-item-title">{{ post.title }}</div>
               </div>
