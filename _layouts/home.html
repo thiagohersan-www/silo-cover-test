@@ -16,7 +16,7 @@
         <a href="/noticias/"><h2>{{ news }}</h2></a>
         <div class="home-list">
           {% assign posts = site.posts | where:"lang", page.lang %}
-          {% for post in posts limit: 2 %}
+          {% for post in posts limit: 20 %}
             {% assign pCover = site.baseurl | append: '/' | append: post.cover %}
             <a class="list-item" href="{{ site.baseurl }}{{ post.url }}">
               <div class="list-item-image" style="background-image: url('{{ pCover }}');">
@@ -31,33 +31,6 @@
           <a href="{{ site.baseurl }}/noticias/"><h3 class="more-news-link">mais notícias...</h3></a>
         {% endif %}
       </section>
-      <section class="list-wrapper project-list">
-        {% assign projects = 'Projetos' %}
-        {% if page.lang == 'en' %}
-          {% assign projects = 'Projects' %}
-        {% endif %}
-        <h2>{{ projects }}:</h2>
-        <!---
-        {% assign project-text = 'Nossas atividades se dividem em 4 frentes de ação:' %}
-        {% if page.lang == 'en' %}
-          {% assign project-text = '' %}
-        {% endif %}
-        {{ project-text }}
-        --->
-        <div class="home-list">
-          {% assign pages = site.pages | where:"lang", page.lang %}
-          {% for page in pages %}
-            {% if page.path contains 'projects' %}
-              {% assign pCover = site.baseurl | append: '/' | append: page.cover %}
-              <a class="list-item project-item" href="{{ site.baseurl }}{{ page.url }}">
-                <div class="list-item-image" style="background-image: url('{{ pCover }}');">
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </section>
     </div>
-    {% include footer.html %}
   </body>
 </html>
