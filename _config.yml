@@ -20,13 +20,13 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "list"
+      layout: "home"
   -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: "list"
+      layout: "home"
 
 # Data
 social:
