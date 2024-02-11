@@ -4,7 +4,7 @@ subtitle: arte e latitude rural
 
 # URL
 url: http://silo.org.br
-baseurl: '/silo-test'
+baseurl: '/silo-cover-test'
 permalink: :title/
 include: ['_pages']
 
